@@ -95,7 +95,7 @@
 
                     <!-- Hugging Face model link -->
                     <span class="link-block">
-                      <a href="https://huggingface.co/YOUR MODEL HERE" target="_blank"
+                      <a href="https://huggingface.co/sander-wood/bgpt/tree/main" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-server"></i>
@@ -106,7 +106,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/sanderwood/bgpt" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -180,7 +180,7 @@
             <br><br>
             In this paper, we introduce bGPT, a model designed for binary data processing and digital world modelling by next byte prediction. The digital world includes not only digital media files, traditionally the focus of deep learning models, but also extends to the intricate realm of digital systems, ranging from hardware architectures to complex algorithms. bGPT transcends traditional deep learning boundaries by directly interpreting and manipulating binary data, enabling a more intrinsic and holistic understanding of the digital world. Its advantages are two-fold: 1) <strong>Interpreting Digital System</strong>: By training on byte sequences, bGPT can learn the patterns of digital systems, enabling it to predict, simulate, and diagnose algorithm or hardware behaviour. This ability allows for the reconstruction of complex systems from binary data. 2) <strong>Unified Modelling</strong>: bGPT integrates various data types into a single framework, treating everything as a byte sequence. This simplifies modelling and allows for easy integration of various data sources.
             <br><br>
-            Our experiments include two main areas: 1) well-studied tasks like generative modelling and classification on digital media data (e.g., text, audio, and images); and 2) relatively underexplored tasks intrinsic to binary-native operations, including data conversion and CPU state modelling, which represent algorithm and hardware simulation, respectively. The demo page sequentially showcases models pre-trained on <a href="https://huggingface.co/datasets/sander-wood/irishman"><font color="#3273DC">IrishMAN</font></a> for data conversion, <a href="https://github.com/YOUR REPO HERE"><font color="#3273DC">CPU states</font></a> for CPU state modelling, <a href="https://huggingface.co/datasets/wikipedia"><font color="#3273DC">Wikipedia</font></a> for text generation, <a href="https://www.image-net.org/"><font color="#3273DC">ImageNet</font></a> for image generation, and <a href="https://www.openslr.org/12"><font color="#3273DC">LibriSpeech</font></a> for audio generation.
+            Our experiments include two main areas: 1) well-studied tasks like generative modelling and classification on digital media data (e.g., text, audio, and images); and 2) relatively underexplored tasks intrinsic to binary-native operations, including data conversion and CPU state modelling, which represent algorithm and hardware simulation, respectively. The demo page sequentially showcases models pre-trained on <a href="https://huggingface.co/datasets/sander-wood/irishman"><font color="#3273DC">IrishMAN</font></a> for data conversion, <a href="https://github.com/sanderwood/bgpt"><font color="#3273DC">CPU states</font></a> for CPU state modelling, <a href="https://huggingface.co/datasets/wikipedia"><font color="#3273DC">Wikipedia</font></a> for text, <a href="https://www.image-net.org/"><font color="#3273DC">ImageNet</font></a> for image, and <a href="https://www.openslr.org/12"><font color="#3273DC">LibriSpeech</font></a> for audio generation/classification.
           </p>
          </div>
         </div>
@@ -260,7 +260,7 @@
         <p>
           The model is fed with concatenated sequences of low-level machine instructions followed by a series of CPU register states. The objective is to accurately predict how the state updates with each instruction until the program halts. This task demonstrates the capacity of bGPT to interpret operational data and replicate digital activities within hardware.
           <br><br>
-          For CPU state modelling, we introduce the <a href="https://github.com/YOUR REPO HERE"><font color="#3273DC">CPU states</font></a> dataset (with 2.1 million instances), offering a simplified representation of CPU behaviour for ease of data collection and evaluation. Each dataset instance contains a 1KB memory block with varying numbers of machine instructions, followed by a sequence of 16-byte CPU register states. These states include various instructions, totaling 21 unique types with 43 variants, such as data movement, logical operations, and arithmetic operations. Within each state, 1 byte each is allocated for the Program Counter (PC) and Accumulator (ACC), 4 bytes are allocated for the Instruction Register (IR), with an additional 10 bytes reserved for general-purpose registers. Instances are generated by executing random sequences of 1 to 256 instructions and capturing the state after each execution. Despite simplifications, this dataset effectively simulates typical CPU behaviour. See Appendix B in <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf"><font color="#3273DC">our paper</font></a> for more details.
+          For CPU state modelling, we introduce the <a href="https://github.com/sanderwood/bgpt"><font color="#3273DC">CPU states</font></a> dataset (with 2.1 million instances), offering a simplified representation of CPU behaviour for ease of data collection and evaluation. Each dataset instance contains a 1KB memory block with varying numbers of machine instructions, followed by a sequence of 16-byte CPU register states. These states include various instructions, totaling 21 unique types with 43 variants, such as data movement, logical operations, and arithmetic operations. Within each state, 1 byte each is allocated for the Program Counter (PC) and Accumulator (ACC), 4 bytes are allocated for the Instruction Register (IR), with an additional 10 bytes reserved for general-purpose registers. Instances are generated by executing random sequences of 1 to 256 instructions and capturing the state after each execution. Despite simplifications, this dataset effectively simulates typical CPU behaviour. See Appendix B in <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf"><font color="#3273DC">our paper</font></a> for more details.
         </div>
         <br>
       <div class="columns is-centered has-text-centered">
@@ -271,7 +271,7 @@
           
         <h6 class="subtitle has-text-left">
           <br>
-          An example of the CPU state modelling task involves bGPT predicting the next CPU state from the current state and an instruction, demonstrating an accuracy exceeding 99.99%. For clarity, we translate byte sequences into a readable format, with the original binary file accessible <a href="/static/pdfs/cpu.bin"><font color="#3273DC">here</font></a>.
+          In this example, bGPT flawlessly executed all 251 consecutive instructions, achieving a perfect performance in modelling CPU states by predicting the next state from the current state and an instruction. For clarity, we translate byte sequences into a readable format, with the original binary file accessible <a href="/static/samples/cpu.bin"><font color="#3273DC">here</font></a>.
         </h6>
         </div>
       </div>
