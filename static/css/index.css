@@ -80,6 +80,7 @@ body {
 
 .author-block {
   display: inline-block;
+  margin-right: 10px; /* Adjust the value to increase or decrease the spacing */
 }
 
 .publication-banner img {
@@ -130,6 +131,10 @@ body {
 }
 
 .eql-cntrb { 
+  font-size: smaller;
+}
+
+.corresp-auth { 
   font-size: smaller;
 }
 
